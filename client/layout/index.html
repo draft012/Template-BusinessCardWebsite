@@ -1,0 +1,162 @@
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="favicon.png">
+	<title>Vitaliy Olikh | Front-end developer</title>
+	<link href='http://webfonts.ru/import/yanone.css' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="page-shadow">
+		<div id="page">
+			<div class="content-innertube">
+					{{>personal}}
+					{{>education}}
+			</div><!-- content-innertube end -->
+			<div class="clear"></div>
+				<div id="about-middle" class="clearfix">
+						{{>skills}}
+						{{>make}}
+				</div><!-- about-middle end -->
+				<div class="container">
+					{{>review}}
+					<div class="chat">
+					<div class="clearfix"><h2>CHAT</h2></div>
+						{{#each tasks}}
+							{{> task}}
+						{{/each}}
+					</div>
+				</div><!--container end -->
+				<div class="clear"></div>
+			<div id="footer">
+				{{>footer}}
+			</div><!-- footer end -->
+		</div><!-- page end -->
+	</div><!-- page-shadow end -->
+</body>
+<template name="personal">
+				<div id="header">
+					<h1>{{name}} | {{job}}</h1>
+					<div class="clear"></div>
+				</div><!-- header end -->
+				<div id="text"><img src="../resume.png" alt="" title="" width="265" height="59"></div>
+				<div id="stripe"></div>
+				<div class="content-left" id="margin-right">
+					<div class="section">
+						<div class="clearfix"><h2>Personal details</h2></div>
+						<div class="item">
+							<ul id="personal-details">
+								<li><span>ПІБ:</span>{{fn}}</li>
+								<li><span>Дата народження:</span>{{date}}</li>
+								<li class="clearfix"><span>Адреса:</span>
+									<ul id="address-lines">
+										<li>{{address_street}},</li>
+										<li>{{address_city}},</li>
+										<li>{{address_country}}</li>
+									</ul>
+								</li>
+								<li><span>Телефон:</span>{{telephone}}</li>
+								<li><span>Email:</span><a href="mailto:{{email}}">{{email}}</a></li>
+							</ul>
+						</div><!-- item end -->
+					</div><!-- section end -->
+				</div><!-- content-left end -->
+</template>
+<template name="education">
+	<div class="content-right">
+		<div class="section">
+			<div class="clearfix"><h2>Education</h2></div>
+			<div class="item">
+				<h3>{{first_education}}</h3>
+				<div class="date">{{first_years}}</div>
+				<div class="description">
+					<p>{{first_data}}</p>
+				</div><!-- description end -->
+			</div><!-- item end -->
+			<div class="item last">
+				<h3>{{second_education}}</h3>
+				<div class="date">{{second_years}}</div>
+				<div class="description">
+					<p class="margin">{{second_data}}</p>
+				</div><!-- description end -->
+			</div><!-- item end -->
+		</div><!-- section end -->
+	</div><!-- content-right end -->
+</template>
+<template name="skills">
+	<div class="content-left">
+		<div class="clearfix"><h2>My skills</h2></div>
+		<ul id="chart">
+			<li class="one">{{one_skill}}</li>
+			<li class="four">{{two_skill}}</li>
+			<li class=" three">{{three_skill}}</li>
+			<li class="five">{{four_skill}}</li>
+			<li class="six">{{five_skill}}</li>
+		</ul>
+		<div id="axis"></div>
+	</div><!-- content-left end -->
+</template>
+<template name="make">
+	<div class="content-right">
+		<div class="clearfix"><h2>What can I do</h2></div>
+		<ul id="check">
+			<li>{{one}}</li>
+			<li>{{two}}</li>
+			<li>{{three}}</li>
+			<li class="last">{{four}}</li>
+		</ul>
+	</div><!-- content-right end -->
+</template>
+<template name="review">
+	<div class="form">
+		<div class="clearfix"><h2>Add a review</h2></div>
+		<form class="new-task">
+			<p><label for="name">Name:</label></p>
+			<p><input type="name" name="name" placeholder="Type to add you name"></p>
+			<p><label for="text">Message:</label></p>
+			<p><input type="text" name="text" placeholder="Type to add you message"></p>
+			<div id="submit"><input type="submit" name="button" value="Submit"></div>
+		</form>
+	</div>
+</template>
+<template name="task">
+	<li>
+		<!--<button class="delete">&times;</button>-->
+		<span class="name"><strong>{{name}}:></strong></span>
+		<span class="text">{{text}}</span>
+	</li>
+</template>
+<template name="footer">
+	<div id="footer-innertube">
+		<div id="footer-address">
+			<h5>Address</h5>
+			<ul>
+				<li>{{address_street}},</li>
+				<li>{{address_city}},</li>
+				<li>{{address_country}}</li>
+			</ul>
+		</div><!-- footer-address end -->
+		<div id="footer-contact">
+			<h5>Contact</h5>
+			<ul>
+				<li>{{telephone}}</li>
+				<li><a href="mailto:{{email}}" title="Відправ мені email">{{email}}</a></li>
+			</ul>
+		</div><!-- footer-contact end -->
+		<div id="footer-social">
+			<h5>Social</h5>
+			<ul>
+				<li><a href="{{twitter_href}}" title=""><img src="../twitter.png" alt="twitter" title="В розробці:)"></a></li>
+				<li><a href="{{facebook_href}}" title=""><img src="../facebook.png" alt="facebook" title="В розробці:)"></a></li>
+				<li><a href="{{flikr_href}}" title=""><img src="../flickr.png" alt="flickr" title="В розробці:)"></a></li>
+				<li><a href="{{linkedin_href}}" title=""><img src="../linkedin.png" alt="linkedin" title="В розробці:)"></a></li>
+			</ul>
+		</div><!-- footer-social end -->
+		<div id="footer-resume">
+			<h5>Resume</h5>
+			<div id="download-resume" title="В розробці:)"><a href="{{resume_href}}"></a></div>
+		</div><!-- footer-resume end -->
+		<div class="clear"></div>
+		<div id="footer-nav"></div>
+		<div class="copy">&copy; {{copy_name}}, {{copy_year}}</div>
+	</div><!-- footer-innertube end -->
+</template>
